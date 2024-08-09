@@ -21,8 +21,12 @@ export const firestore = getFirestore(app);
 
 // Conditionally Initialize Analytics
 let analytics;
-if (typeof window !== 'undefined' && isSupported()) {
-  analytics = getAnalytics(app);
+if (typeof window !== 'undefined') {
+  isSupported().then(supported => {
+    if (supported) {
+      analytics = getAnalytics(app);
+    }
+  });
 }
 
 export { analytics };
