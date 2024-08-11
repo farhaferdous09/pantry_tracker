@@ -1,7 +1,9 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",  // This sets the base directory for resolving non-relative module names
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./*"]  // This sets up the alias @ to point to the root directory
     }
   }
 }
+
